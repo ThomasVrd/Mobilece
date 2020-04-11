@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Match"></activity>
+        <activity android:name=".Victoire"></activity>
+        <activity android:name=".Match" />
         <activity android:name=".MatchsPre" />
         <activity android:name=".NvxMatch" />
         <activity android:name=".MainActivity">

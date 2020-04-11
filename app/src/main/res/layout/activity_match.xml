@@ -222,6 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="Double Faute" />
         </LinearLayout>
         <Space
@@ -250,6 +251,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#FFFFDB00"
+            android:onClick="onClick2"
             android:text="Ace" />
         <Space
             android:layout_width="5dp"
@@ -305,6 +307,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="Point Gagnant" />
 
             <Space
@@ -317,6 +320,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="Faute   Directe" />
             <Space
                 android:layout_width="5dp"
@@ -328,6 +332,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="Faute   Provo." />
         </LinearLayout>
         <Space
@@ -353,6 +358,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="Point Gagnant" />
             <Space
                 android:layout_width="5dp"
@@ -364,6 +370,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="Faute   Directe" />
             <Space
                 android:layout_width="5dp"
@@ -375,6 +382,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="Faute   Provo." />
         </LinearLayout>
 
@@ -403,6 +411,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onClick2"
                 android:text="Annuler" />
             <Space
                 android:layout_width="10dp"
@@ -413,6 +422,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onClick2"
                 android:text="Terminer" />
             <Space
                 android:layout_width="10dp"

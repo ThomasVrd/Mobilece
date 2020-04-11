@@ -1,0 +1,47 @@
+package fr.android.moi.tennistracker;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class Victoire extends AppCompatActivity {
+
+    String gagnant;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_victoire);
+        Bundle b = getIntent().getExtras();
+        gagnant = b.getString("gagnant");
+        setVictoire();
+    }
+
+    public void setVictoire()
+    {
+        TextView txtVictoire = (TextView) findViewById(R.id.textVictoire);
+        if(gagnant.equals("J1"))
+        {
+            txtVictoire.setText("Victoire Joueur 1 !");
+        }
+        if(gagnant.equals("J2"))
+        {
+            txtVictoire.setText("Victoire Joueur 2 !");
+        }
+    }
+
+    public void onClick3(View view)
+    {
+        switch(view.getId())
+        {
+            case R.id.buttonTer:
+                finish();
+                break;
+            default:
+                finish();
+                break;
+        }
+    }
+}
