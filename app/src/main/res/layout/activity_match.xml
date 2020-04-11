@@ -238,6 +238,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#FFFFDB00"
+            android:onClick="onClick2"
             android:text="Ace" />
         <Space
             android:layout_width="5dp"
