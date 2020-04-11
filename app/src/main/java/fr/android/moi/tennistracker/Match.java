@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class Match extends AppCompatActivity {
+public class  Match extends AppCompatActivity {
 
     int nbMatch;
 
