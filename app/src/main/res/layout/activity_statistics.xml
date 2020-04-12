@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Statistics">
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,45 +26,27 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textVs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="false"
-        android:text="Bienvenue"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonNvxMatch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/buttonNvxMatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FFDB00"
-        android:onClick="onClick"
-        android:text="Nouveau Match"
+        android:layout_marginTop="32dp"
+        android:text="J1 vs J2"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="45sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
-        android:id="@+id/buttonMatchsPre"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:background="#FFDB00"
-        android:onClick="onClick"
-        android:text="Matchs Précédents"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Gagnant : J1"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNvxMatch" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textVs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
