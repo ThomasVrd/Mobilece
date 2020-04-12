@@ -11,14 +11,19 @@ import org.w3c.dom.Text;
 
 public class  Match extends AppCompatActivity {
 
+    DatabaseHelper myDb;
     int nbMatch = 1;
     int win1 = 0;
     int win2 = 0;
+
+    // CREER LES VARIABLES A METTRE DANS LA BDD
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match);
+
+        myDb = new DatabaseHelper(this);
     }
 
     public void onClick2(View view)
@@ -80,6 +85,7 @@ public class  Match extends AppCompatActivity {
                 finish();
                 break;
             case R.id.buttonTerminer:
+                myDb.insertData(); // il faut ajouter les arguments
                 finish();
                 break;
         }
