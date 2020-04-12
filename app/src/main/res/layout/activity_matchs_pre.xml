@@ -25,10 +25,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <Button
+        android:id="@+id/buttonRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFDB00"
+        android:onClick="onClick5"
+        android:text="Retour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="158dp"
         app:layout_constraintTop_toBottomOf="@+id/divider">
 
         <LinearLayout
@@ -41,92 +53,101 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
+                android:onClick="onClick5"
                 android:text="Match 1"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5" />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 2"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 3"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 4"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 5"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 6"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 7"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 8"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 9"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/match10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClick5"
                 android:text="Match 10"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:onClick="onClick5"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 

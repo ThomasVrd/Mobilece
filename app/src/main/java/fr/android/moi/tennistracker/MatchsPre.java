@@ -18,6 +18,9 @@ public class MatchsPre extends AppCompatActivity {
     {
         switch (view.getId())
         {
+            case R.id.buttonRetour:
+                finish();
+                break;
             case R.id.match1:
                 Intent intent = new Intent(getApplicationContext(), Statistics.class);
                 intent.putExtra("number", 0);

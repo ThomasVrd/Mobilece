@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class  Match extends AppCompatActivity {
 
     DatabaseHelper myDb;
@@ -141,7 +139,7 @@ public class  Match extends AppCompatActivity {
                 fautesJ2 = fautesJ2 + 1;
                 showPoints("J1");
                 break;
-            case R.id.buttonAnnuler:
+            case R.id.buttonRetour:
                 finish();
                 break;
             case R.id.buttonTerminer:
