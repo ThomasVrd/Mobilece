@@ -17,8 +17,17 @@ public class  Match extends AppCompatActivity {
     int win2 = 0;
     String J1 = "";
     String J2 = "";
-
-    // CREER LES VARIABLES A METTRE DANS LA BDD ICI
+    String JGagnant = "Aucun";
+    float premierServiceJ1 = 0;
+    float premierServiceJ2 = 0;
+    float nbServicesJ1 = 0;
+    float nbServicesJ2 = 0;
+    float DFServiceJ1 = 0;
+    float DFServiceJ2 = 0;
+    float pointGagnantJ1 = 0;
+    float pointGagnantJ2 = 0;
+    float fautesJ1 = 0;
+    float fautesJ2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,56 +58,96 @@ public class  Match extends AppCompatActivity {
             case R.id.button1Ace:
                 if(textService.equals("Service " + J1 + " :"))
                 {
+                    premierServiceJ1 = premierServiceJ1 + 1;
+                    nbServicesJ1 = nbServicesJ1 + 1;
                     showPoints("J1");
                 }
                 if(textService.equals("Service " + J2 + " :"))
                 {
+                    premierServiceJ2 = premierServiceJ2 + 1;
+                    nbServicesJ2 = nbServicesJ2 + 1;
                     showPoints("J2");
                 }
                 break;
             case R.id.button2Ace:
                 if(textService.equals("Service " + J1 + " :"))
                 {
+                    nbServicesJ1 = nbServicesJ1 + 1;
                     showPoints("J1");
                 }
                 if(textService.equals("Service " + J2 + " :"))
                 {
+                    nbServicesJ2 = nbServicesJ2 + 1;
                     showPoints("J2");
                 }
                 break;
             case R.id.buttonDoubleFaute:
                 if(textService.equals("Service " + J1 + " :"))
                 {
+                    DFServiceJ1 = DFServiceJ1 + 1;
+                    nbServicesJ1 = nbServicesJ1 + 1;
                     showPoints("J2");
                 }
                 if(textService.equals("Service " + J2 + " :"))
                 {
+                    DFServiceJ2 = DFServiceJ2 + 1;
+                    nbServicesJ2 = nbServicesJ2 + 1;
                     showPoints("J1");
                 }
                 break;
+            case R.id.button1Service:
+                if(textService.equals("Service " + J1 + " :"))
+                {
+                    premierServiceJ1 = premierServiceJ1 + 1;
+                    nbServicesJ1 = nbServicesJ1 + 1;
+                }
+                if(textService.equals("Service " + J2 + " :"))
+                {
+                    premierServiceJ2 = premierServiceJ2 + 1;
+                    nbServicesJ2 = nbServicesJ2 + 1;
+                }
+                break;
+            case R.id.button2service:
+                if(textService.equals("Service " + J1 + " :"))
+                {
+                    nbServicesJ1 = nbServicesJ1 + 1;
+                }
+                if(textService.equals("Service " + J2 + " :"))
+                {
+                    nbServicesJ2 = nbServicesJ2 + 1;
+                }
+                break;
             case R.id.button1PG:
+                pointGagnantJ1 = pointGagnantJ1 + 1;
                 showPoints("J1");
                 break;
             case R.id.button2PG:
+                pointGagnantJ2 = pointGagnantJ2 + 1;
                 showPoints("J2");
                 break;
             case R.id.button1FD:
+                fautesJ1 = fautesJ1 + 1;
                 showPoints("J2");
                 break;
             case R.id.button2FD:
+                fautesJ2 = fautesJ2 + 1;
                 showPoints("J1");
                 break;
             case R.id.button1FP:
+                fautesJ1 = fautesJ1 + 1;
                 showPoints("J2");
                 break;
             case R.id.button2FP:
+                fautesJ2 = fautesJ2 + 1;
                 showPoints("J1");
                 break;
             case R.id.buttonAnnuler:
                 finish();
                 break;
             case R.id.buttonTerminer:
-                //myDb.insertData(); // il faut ajouter les arguments
+                premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
                 finish();
                 break;
         }
@@ -292,8 +341,12 @@ public class  Match extends AppCompatActivity {
                     textSet15.setText(String.valueOf(set15));
                     if(set15>=6 && set25<=(set15-2))
                     {
+                        JGagnant = J1;
+                        premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                        premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                        myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
                         Intent intent = new Intent(getApplicationContext(), Victoire.class);
-                        intent.putExtra("gagnant", "J1");
+                        intent.putExtra("gagnant", J1);
                         startActivity(intent);
                         finish();
                     }
@@ -361,8 +414,12 @@ public class  Match extends AppCompatActivity {
                     textSet25.setText(String.valueOf(set25));
                     if(set25>=6 && set15<=(set25-2))
                     {
+                        JGagnant = J2;
+                        premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                        premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                        myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
                         Intent intent = new Intent(getApplicationContext(), Victoire.class);
-                        intent.putExtra("gagnant", "J2");
+                        intent.putExtra("gagnant", J2);
                         startActivity(intent);
                         finish();
                     }
@@ -376,6 +433,10 @@ public class  Match extends AppCompatActivity {
     {
         if(win1>=3 && win2<=(win1-2))
         {
+            JGagnant = J1;
+            premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+            premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+            myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
             Intent intent = new Intent(getApplicationContext(), Victoire.class);
             intent.putExtra("gagnant", J1);
             startActivity(intent);
@@ -383,6 +444,10 @@ public class  Match extends AppCompatActivity {
         }
         if(win2>=3 && win1<=(win2-2))
         {
+            JGagnant = J2;
+            premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+            premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+            myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
             Intent intent = new Intent(getApplicationContext(), Victoire.class);
             intent.putExtra("gagnant", J2);
             startActivity(intent);
