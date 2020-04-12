@@ -15,7 +15,8 @@ public class  Match extends AppCompatActivity {
     int nbMatch = 1;
     int win1 = 0;
     int win2 = 0;
-    int aaaaaaaaaaaaaaaa = 69420;
+    String J1 = "";
+    String J2 = "";
 
     // CREER LES VARIABLES A METTRE DANS LA BDD ICI
 
@@ -25,6 +26,17 @@ public class  Match extends AppCompatActivity {
         setContentView(R.layout.activity_match);
 
         myDb = new DatabaseHelper(this);
+
+        Bundle b = getIntent().getExtras();
+        J1 = b.getString("J1");
+        J2 = b.getString("J2");
+
+        TextView textService = (TextView) findViewById(R.id.textService);
+        TextView textJ1 = (TextView) findViewById(R.id.textJ1);
+        TextView textJ2 = (TextView) findViewById(R.id.textJ2);
+        textService.setText("Service " + J1 + " :");
+        textJ1.setText(J1);
+        textJ2.setText(J2);
     }
 
     public void onClick2(View view)
@@ -35,31 +47,31 @@ public class  Match extends AppCompatActivity {
         switch(view.getId())
         {
             case R.id.button1Ace:
-                if(textService.equals("Service Joueur 1 :"))
+                if(textService.equals("Service " + J1 + " :"))
                 {
                     showPoints("J1");
                 }
-                if(textService.equals("Service Joueur 2 :"))
+                if(textService.equals("Service " + J2 + " :"))
                 {
                     showPoints("J2");
                 }
                 break;
             case R.id.button2Ace:
-                if(textService.equals("Service Joueur 1 :"))
+                if(textService.equals("Service " + J1 + " :"))
                 {
                     showPoints("J1");
                 }
-                if(textService.equals("Service Joueur 2 :"))
+                if(textService.equals("Service " + J2 + " :"))
                 {
                     showPoints("J2");
                 }
                 break;
             case R.id.buttonDoubleFaute:
-                if(textService.equals("Service Joueur 1 :"))
+                if(textService.equals("Service " + J1 + " :"))
                 {
                     showPoints("J2");
                 }
-                if(textService.equals("Service Joueur 2 :"))
+                if(textService.equals("Service " + J2 + " :"))
                 {
                     showPoints("J1");
                 }
@@ -86,7 +98,7 @@ public class  Match extends AppCompatActivity {
                 finish();
                 break;
             case R.id.buttonTerminer:
-                myDb.insertData(); // il faut ajouter les arguments
+                //myDb.insertData(); // il faut ajouter les arguments
                 finish();
                 break;
         }
@@ -128,13 +140,13 @@ public class  Match extends AppCompatActivity {
                         textPoints1.setText("0");
                         textPoints2.setText("0");
                         showSets("J1");
-                        if(service.equals("Service Joueur 1 :"))
+                        if(service.equals("Service " + J1 + " :"))
                         {
-                            textService.setText("Service Joueur 2 :");
+                            textService.setText("Service " + J2 + " :");
                         }
-                        if(service.equals("Service Joueur 2 :"))
+                        if(service.equals("Service " + J2 + " :"))
                         {
-                            textService.setText("Service Joueur 1 :");
+                            textService.setText("Service " + J1 + " :");
                         }
 
                     }
@@ -143,13 +155,13 @@ public class  Match extends AppCompatActivity {
                     textPoints1.setText("0");
                     textPoints2.setText("0");
                     showSets("J1");
-                    if(service.equals("Service Joueur 1 :"))
+                    if(service.equals("Service " + J1 + " :"))
                     {
-                        textService.setText("Service Joueur 2 :");
+                        textService.setText("Service " + J2 + " :");
                     }
-                    if(service.equals("Service Joueur 2 :"))
+                    if(service.equals("Service " + J2 + " :"))
                     {
-                        textService.setText("Service Joueur 1 :");
+                        textService.setText("Service " + J1 + " :");
                     }
                     break;
             }
@@ -181,13 +193,13 @@ public class  Match extends AppCompatActivity {
                         textPoints1.setText("0");
                         textPoints2.setText("0");
                         showSets("J2");
-                        if(service.equals("Service Joueur 1 :"))
+                        if(service.equals("Service " + J1 + " :"))
                         {
-                            textService.setText("Service Joueur 2 :");
+                            textService.setText("Service " + J2 + " :");
                         }
-                        if(service.equals("Service Joueur 2 :"))
+                        if(service.equals("Service " + J2 + " :"))
                         {
-                            textService.setText("Service Joueur 1 :");
+                            textService.setText("Service " + J1 + " :");
                         }
                     }
                     break;
@@ -195,13 +207,13 @@ public class  Match extends AppCompatActivity {
                     textPoints1.setText("0");
                     textPoints2.setText("0");
                     showSets("J2");
-                    if(service.equals("Service Joueur 1 :"))
+                    if(service.equals("Service " + J1 + " :"))
                     {
-                        textService.setText("Service Joueur 2 :");
+                        textService.setText("Service " + J2 + " :");
                     }
-                    if(service.equals("Service Joueur 2 :"))
+                    if(service.equals("Service " + J2 + " :"))
                     {
-                        textService.setText("Service Joueur 1 :");
+                        textService.setText("Service " + J1 + " :");
                     }
                     break;
             }
@@ -365,14 +377,14 @@ public class  Match extends AppCompatActivity {
         if(win1>=3 && win2<=(win1-2))
         {
             Intent intent = new Intent(getApplicationContext(), Victoire.class);
-            intent.putExtra("gagnant", "J1");
+            intent.putExtra("gagnant", J1);
             startActivity(intent);
             finish();
         }
         if(win2>=3 && win1<=(win2-2))
         {
             Intent intent = new Intent(getApplicationContext(), Victoire.class);
-            intent.putExtra("gagnant", "J2");
+            intent.putExtra("gagnant", J2);
             startActivity(intent);
             finish();
         }

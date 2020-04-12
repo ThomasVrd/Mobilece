@@ -16,20 +16,9 @@ public class Victoire extends AppCompatActivity {
         setContentView(R.layout.activity_victoire);
         Bundle b = getIntent().getExtras();
         gagnant = b.getString("gagnant");
-        setVictoire();
-    }
 
-    public void setVictoire()
-    {
         TextView txtVictoire = (TextView) findViewById(R.id.textVictoire);
-        if(gagnant.equals("J1"))
-        {
-            txtVictoire.setText("Victoire Joueur 1 !");
-        }
-        if(gagnant.equals("J2"))
-        {
-            txtVictoire.setText("Victoire Joueur 2 !");
-        }
+        txtVictoire.setText("Victoire " + gagnant + " !");
     }
 
     public void onClick3(View view)
