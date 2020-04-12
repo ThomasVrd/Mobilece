@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    //VARIABLES
+
     public static final String DATABASE_NAME = "tennis.db";
     public static final String TABLE_NAME = "match";
     public static final String COL_1 = "ID";
