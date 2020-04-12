@@ -15,6 +15,7 @@ public class  Match extends AppCompatActivity {
     int nbMatch = 1;
     int win1 = 0;
     int win2 = 0;
+    int aaaaaaaaaaaaaaaa = 69420;
 
     // CREER LES VARIABLES A METTRE DANS LA BDD ICI
 
