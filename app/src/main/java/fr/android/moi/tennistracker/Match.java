@@ -16,7 +16,7 @@ public class  Match extends AppCompatActivity {
     int win1 = 0;
     int win2 = 0;
 
-    // CREER LES VARIABLES A METTRE DANS LA BDD
+    // CREER LES VARIABLES A METTRE DANS LA BDD ICI
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
