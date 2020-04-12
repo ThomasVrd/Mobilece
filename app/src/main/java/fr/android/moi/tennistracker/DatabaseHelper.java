@@ -80,4 +80,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
 
      }
+
+     public Cursor getDataGame(String IDgame) {
+         SQLiteDatabase db = this.getWritableDatabase();
+         Cursor res = db.rawQuery("select ID from "+ TABLE_NAME + "where ID = "+ IDgame, null);
+         return res;
+     }
 }
