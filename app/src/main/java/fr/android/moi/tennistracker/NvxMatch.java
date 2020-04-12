@@ -21,6 +21,7 @@ public class NvxMatch extends AppCompatActivity {
             case R.id.buttonStart:
                 Intent intent = new Intent(getApplicationContext(), Match.class);
                 startActivity(intent);
+                finish();
                 break;
         }
     }
