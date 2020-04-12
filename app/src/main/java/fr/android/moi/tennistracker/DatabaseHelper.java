@@ -12,7 +12,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //VARIABLES
 
-    public static final String DATABASE_NAME = "tennis.db";
+    public static final String DATABASE_NAME = "tennis .db";
     public static final String TABLE_NAME = "match";
     public static final String COL_1 = "ID";
     public static final String COL_2 = "Joueur1";
@@ -70,7 +70,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
      public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+ TABLE_NAME, null);
+        Cursor res = db.rawQuery("select * from "+ TABLE_NAME,  null);
         return res;
+     }
+
+     public Cursor getAllGames() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select ID from "+ TABLE_NAME, null);
+        return res;
+
      }
 }
