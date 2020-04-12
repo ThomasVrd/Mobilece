@@ -114,7 +114,7 @@ public class  Match extends AppCompatActivity {
                     textPoints1.setText("40");
                     break;
                 case "40":
-                   if(points2.equals("40"))
+                    if(points2.equals("40"))
                     {
                         textPoints1.setText("AV");
                     }
@@ -220,74 +220,74 @@ public class  Match extends AppCompatActivity {
         TextView textSet24 = (TextView) findViewById(R.id.textSet24);
         TextView textSet25 = (TextView) findViewById(R.id.textSet25);
 
-            if(gagnant.equals("J1"))
+        if(gagnant.equals("J1"))
+        {
+            switch(nbMatch)
             {
-                switch(nbMatch)
-                {
-                    case 1:
-                        int set11 = Integer.parseInt(textSet11.getText().toString());
-                        int set21 = Integer.parseInt(textSet21.getText().toString());
-                        set11 = set11 + 1;
-                        textSet11.setText(String.valueOf(set11));
-                        if(set11>=6 && set21<=(set11-2))
-                        {
-                            win1 = win1 + 1;
-                            testWin();
-                            nbMatch = nbMatch + 1;
-                        }
-                        break;
-                    case 2:
-                        int set12 = Integer.parseInt(textSet12.getText().toString());
-                        int set22 = Integer.parseInt(textSet22.getText().toString());
-                        set12 = set12 + 1;
-                        textSet12.setText(String.valueOf(set12));
-                        if(set12>=6 && set22<=(set12-2))
-                        {
-                            win1 = win1 + 1;
-                            testWin();
-                            nbMatch = nbMatch + 1;
-                        }
-                        break;
-                    case 3:
-                        int set13 = Integer.parseInt(textSet13.getText().toString());
-                        int set23 = Integer.parseInt(textSet23.getText().toString());
-                        set13 = set13 + 1;
-                        textSet13.setText(String.valueOf(set13));
-                        if(set13>=6 && set23<=(set13-2))
-                        {
-                            win1 = win1 + 1;
-                            testWin();
-                            nbMatch = nbMatch + 1;
-                        }
-                        break;
-                    case 4:
-                        int set14 = Integer.parseInt(textSet14.getText().toString());
-                        int set24 = Integer.parseInt(textSet24.getText().toString());
-                        set14 = set14 + 1;
-                        textSet14.setText(String.valueOf(set14));
-                        if(set14>=6 && set24<=(set14-2))
-                        {
-                            win1 = win1 + 1;
-                            testWin();
-                            nbMatch = nbMatch + 1;
-                        }
-                        break;
-                    case 5:
-                        int set15 = Integer.parseInt(textSet15.getText().toString());
-                        int set25 = Integer.parseInt(textSet25.getText().toString());
-                        set15 = set15 + 1;
-                        textSet15.setText(String.valueOf(set15));
-                        if(set15>=6 && set25<=(set15-2))
-                        {
-                            Intent intent = new Intent(getApplicationContext(), Victoire.class);
-                            intent.putExtra("gagnant", "J1");
-                            startActivity(intent);
-                            finish();
-                        }
-                        break;
+                case 1:
+                    int set11 = Integer.parseInt(textSet11.getText().toString());
+                    int set21 = Integer.parseInt(textSet21.getText().toString());
+                    set11 = set11 + 1;
+                    textSet11.setText(String.valueOf(set11));
+                    if(set11>=6 && set21<=(set11-2))
+                    {
+                        win1 = win1 + 1;
+                        testWin();
+                        nbMatch = nbMatch + 1;
+                    }
+                    break;
+                case 2:
+                    int set12 = Integer.parseInt(textSet12.getText().toString());
+                    int set22 = Integer.parseInt(textSet22.getText().toString());
+                    set12 = set12 + 1;
+                    textSet12.setText(String.valueOf(set12));
+                    if(set12>=6 && set22<=(set12-2))
+                    {
+                        win1 = win1 + 1;
+                        testWin();
+                        nbMatch = nbMatch + 1;
+                    }
+                    break;
+                case 3:
+                    int set13 = Integer.parseInt(textSet13.getText().toString());
+                    int set23 = Integer.parseInt(textSet23.getText().toString());
+                    set13 = set13 + 1;
+                    textSet13.setText(String.valueOf(set13));
+                    if(set13>=6 && set23<=(set13-2))
+                    {
+                        win1 = win1 + 1;
+                        testWin();
+                        nbMatch = nbMatch + 1;
+                    }
+                    break;
+                case 4:
+                    int set14 = Integer.parseInt(textSet14.getText().toString());
+                    int set24 = Integer.parseInt(textSet24.getText().toString());
+                    set14 = set14 + 1;
+                    textSet14.setText(String.valueOf(set14));
+                    if(set14>=6 && set24<=(set14-2))
+                    {
+                        win1 = win1 + 1;
+                        testWin();
+                        nbMatch = nbMatch + 1;
+                    }
+                    break;
+                case 5:
+                    int set15 = Integer.parseInt(textSet15.getText().toString());
+                    int set25 = Integer.parseInt(textSet25.getText().toString());
+                    set15 = set15 + 1;
+                    textSet15.setText(String.valueOf(set15));
+                    if(set15>=6 && set25<=(set15-2))
+                    {
+                        Intent intent = new Intent(getApplicationContext(), Victoire.class);
+                        intent.putExtra("gagnant", "J1");
+                        startActivity(intent);
+                        finish();
+                    }
+                    break;
 
-                }
             }
+        }
 
         if(gagnant.equals("J2"))
         {
