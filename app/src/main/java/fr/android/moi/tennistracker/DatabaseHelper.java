@@ -76,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
      public Cursor getAllGames() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select ID from "+ TABLE_NAME, null);
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME, null);
         return res;
 
      }

@@ -3,15 +3,20 @@ package fr.android.moi.tennistracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
-public class MatchsPre extends AppCompatActivity {
+public class   MatchsPre extends AppCompatActivity {
+    DatabaseHelper myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matchs_pre);
+        myDB = new DatabaseHelper(this);
+        ViewAll();
     }
 
     public void onClick5(View view)
@@ -72,5 +77,30 @@ public class MatchsPre extends AppCompatActivity {
                 startActivity(intent9);
                 break;
         }
+    }
+
+
+     ///////// c'est cette fonction qui bug
+    public void ViewAll() {
+        Cursor res = myDB.getAllData();
+
+        if(res.getCount() == 0){
+            return;
+        }
+
+        StringBuffer buffer = new StringBuffer();
+        while (res.moveToNext()) {
+            buffer.append("ID :"+ res.getString(0)+"\n");
+            buffer.append("Joueur 1 :"+ res.getString(1)+"\n");
+            buffer.append("Joueur 2 :"+ res.getString(2)+"\n\n");
+            Log.d("ID",  res.getString(0));
+            Log.d("J1",  res.getString(1));
+            Log.d("J2",  res.getString(2));
+        }
+
+
+        
+         
+         
     }
 }
