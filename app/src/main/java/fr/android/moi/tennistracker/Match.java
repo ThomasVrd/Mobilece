@@ -150,12 +150,12 @@ public class  Match extends AppCompatActivity {
                 if(nbServicesJ1!=0)
                 {
                     premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
-                    premierServiceJ1 = premierServiceJ1 * 100;
+                    premierServiceJ1 = premierServiceJ1*100;
                 }
                 if(nbServicesJ2!=0)
                 {
                     premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
-                    premierServiceJ2 = premierServiceJ2 * 100;
+                    premierServiceJ2 = premierServiceJ2*100;
                 }
                 myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
                 finish();
@@ -352,8 +352,16 @@ public class  Match extends AppCompatActivity {
                     if(set15>=6 && set25<=(set15-2))
                     {
                         JGagnant = J1;
-                        premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
-                        premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                        if(nbServicesJ1!=0)
+                        {
+                            premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                            premierServiceJ1 = premierServiceJ1*100;
+                        }
+                        if(nbServicesJ2!=0)
+                        {
+                            premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                            premierServiceJ2 = premierServiceJ2*100;
+                        }
                         myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
                         Intent intent = new Intent(getApplicationContext(), Victoire.class);
                         intent.putExtra("gagnant", J1);
@@ -425,8 +433,16 @@ public class  Match extends AppCompatActivity {
                     if(set25>=6 && set15<=(set25-2))
                     {
                         JGagnant = J2;
-                        premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
-                        premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                        if(nbServicesJ1!=0)
+                        {
+                            premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                            premierServiceJ1 = premierServiceJ1*100;
+                        }
+                        if(nbServicesJ2!=0)
+                        {
+                            premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                            premierServiceJ2 = premierServiceJ2*100;
+                        }
                         myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
                         Intent intent = new Intent(getApplicationContext(), Victoire.class);
                         intent.putExtra("gagnant", J2);
@@ -444,8 +460,16 @@ public class  Match extends AppCompatActivity {
         if(win1>=3 && win2<=(win1-2))
         {
             JGagnant = J1;
-            premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
-            premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+            if(nbServicesJ1!=0)
+            {
+                premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                premierServiceJ1 = premierServiceJ1*100;
+            }
+            if(nbServicesJ2!=0)
+            {
+                premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                premierServiceJ2 = premierServiceJ2*100;
+            }
             myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
             Intent intent = new Intent(getApplicationContext(), Victoire.class);
             intent.putExtra("gagnant", J1);
@@ -455,8 +479,16 @@ public class  Match extends AppCompatActivity {
         if(win2>=3 && win1<=(win2-2))
         {
             JGagnant = J2;
-            premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
-            premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+            if(nbServicesJ1!=0)
+            {
+                premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                premierServiceJ1 = premierServiceJ1*100;
+            }
+            if(nbServicesJ2!=0)
+            {
+                premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                premierServiceJ2 = premierServiceJ2*100;
+            }
             myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
             Intent intent = new Intent(getApplicationContext(), Victoire.class);
             intent.putExtra("gagnant", J2);
