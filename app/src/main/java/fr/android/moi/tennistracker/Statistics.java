@@ -31,7 +31,7 @@ public class Statistics extends AppCompatActivity {
     }
 
     public void viewStats(){
-        Cursor res = myDB.getAllData();
+        Cursor res = myDB.getDataGame(XXXXXXXXXXXX); // mettre l'id de la game
 
         if(res.getCount() == 0){
             return;
