@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Stack;
@@ -25,23 +29,6 @@ public class   MatchsPre extends AppCompatActivity {
         myDB = new DatabaseHelper(this);
         ViewAll();
         setViews();
-
-        /*for(int i = 0; i<ids.length; i++)
-        {
-            final String num = ids[i];
-            int id = getResources().getIdentifier(ids[0], "id", "android");
-            Button button = findViewById(id);
-            button.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    Intent intent = new Intent(getApplicationContext(), Statistics.class);
-                    intent.putExtra("id", num);
-                    startActivity(intent);
-                }
-            });
-        }*/
     }
 
     public void onClick5(View view)
@@ -50,56 +37,6 @@ public class   MatchsPre extends AppCompatActivity {
         {
             case R.id.buttonRetour:
                 finish();
-                break;
-            case R.id.match1:
-                Intent intent = new Intent(getApplicationContext(), Statistics.class);
-                intent.putExtra("number", 1);
-                startActivity(intent);
-                break;
-            case R.id.match2:
-                Intent intent1 = new Intent(getApplicationContext(), Statistics.class);
-                intent1.putExtra("number", 2);
-                startActivity(intent1);
-                break;
-            case R.id.match3:
-                Intent intent2 = new Intent(getApplicationContext(), Statistics.class);
-                intent2.putExtra("number", 3);
-                startActivity(intent2);
-                break;
-            case R.id.match4:
-                Intent intent3 = new Intent(getApplicationContext(), Statistics.class);
-                intent3.putExtra("number", 4);
-                startActivity(intent3);
-                break;
-            case R.id.match5:
-                Intent intent4 = new Intent(getApplicationContext(), Statistics.class);
-                intent4.putExtra("number", 5);
-                startActivity(intent4);
-                break;
-            case R.id.match6:
-                Intent intent5 = new Intent(getApplicationContext(), Statistics.class);
-                intent5.putExtra("number", 6);
-                startActivity(intent5);
-                break;
-            case R.id.match7:
-                Intent intent6 = new Intent(getApplicationContext(), Statistics.class);
-                intent6.putExtra("number", 7);
-                startActivity(intent6);
-                break;
-            case R.id.match8:
-                Intent intent7 = new Intent(getApplicationContext(), Statistics.class);
-                intent7.putExtra("number", 8);
-                startActivity(intent7);
-                break;
-            case R.id.match9:
-                Intent intent8 = new Intent(getApplicationContext(), Statistics.class);
-                intent8.putExtra("number", 9);
-                startActivity(intent8);
-                break;
-            case R.id.match10:
-                Intent intent9 = new Intent(getApplicationContext(), Statistics.class);
-                intent9.putExtra("number", 10);
-                startActivity(intent9);
                 break;
         }
     }
@@ -118,31 +55,40 @@ public class   MatchsPre extends AppCompatActivity {
             data.push(res.getString(1));
             data.push(res.getString(2));
         }
-        Log.d("data", String.valueOf(data));
 
     }
 
     @SuppressLint("ResourceType")
     public void setViews()
     {
-        String J1 = "";
-        String J2 = "";
-        int i = 0;
         int size = data.size()/3;
         ids = new String[size];
-        Log.d("ids", String.valueOf(ids));
-        String[] textviews = {"match1", "match2", "match3", "match4", "match5", "match6", "match7", "match8", "match9", "match10"};
-        while(!data.empty())
+        for(int i=0; i<size; i++)
         {
-            J2 = data.pop();
-            J1 = data.pop();
+            String J2 = data.pop();
+            String J1 = data.pop();
             ids[i] = data.pop();
-            Log.d("id", ids[i]);
-            int textId = getResources().getIdentifier(textviews[i], "id", "android");
-            Log.d("textId", String.valueOf(textId));
-            TextView tv = findViewById(textId);
+            LinearLayout ll = (LinearLayout) findViewById(R.id.LinLay);
+            Button tv = new Button(getApplicationContext());
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            tv.setLayoutParams(lp);
             tv.setText(J1 + " vs " + J2);
-            i++;
+            tv.setTextSize(36);
+            tv.setTypeface(Typeface.DEFAULT_BOLD);
+            tv.setTextColor(Color.parseColor("#FF000000"));
+            tv.setBackgroundColor(0xFFFFFFFF);
+            tv.setId(Integer.parseInt(ids[i]));
+            final int finalI = i;
+            tv.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), Statistics.class);
+                    intent.putExtra("id", ids[finalI]);
+                    startActivity(intent);
+                }
+            });
+            ll.addView(tv);
         }
 
     }
