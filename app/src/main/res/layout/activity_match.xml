@@ -202,6 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="1er service" />
             <Space
                 android:layout_width="5dp"
@@ -213,6 +214,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFDB00"
+                android:onClick="onClick2"
                 android:text="2eme service" />
             <Space
                 android:layout_width="5dp"
@@ -295,6 +297,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textEchangeJ1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -346,6 +349,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/textEchangeJ2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -41,9 +41,13 @@ public class  Match extends AppCompatActivity {
         TextView textService = (TextView) findViewById(R.id.textService);
         TextView textJ1 = (TextView) findViewById(R.id.textJ1);
         TextView textJ2 = (TextView) findViewById(R.id.textJ2);
+        TextView textEchangeJ1 = (TextView) findViewById(R.id.textEchangeJ1);
+        TextView textEchangeJ2 = (TextView) findViewById(R.id.textEchangeJ2);
         textService.setText("Service " + J1 + " :");
         textJ1.setText(J1);
         textJ2.setText(J2);
+        textEchangeJ1.setText(J1);
+        textEchangeJ2.setText(J2);
     }
 
     public void onClick2(View view)
@@ -143,8 +147,16 @@ public class  Match extends AppCompatActivity {
                 finish();
                 break;
             case R.id.buttonTerminer:
-                premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
-                premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                if(nbServicesJ1!=0)
+                {
+                    premierServiceJ1 = premierServiceJ1 / nbServicesJ1;
+                    premierServiceJ1 = premierServiceJ1 * 100;
+                }
+                if(nbServicesJ2!=0)
+                {
+                    premierServiceJ2 = premierServiceJ2 / nbServicesJ2;
+                    premierServiceJ2 = premierServiceJ2 * 100;
+                }
                 myDb.insertData(J1, J2, JGagnant, premierServiceJ1, premierServiceJ2, DFServiceJ1, DFServiceJ2, pointGagnantJ1, pointGagnantJ2, fautesJ1, fautesJ2);
                 finish();
                 break;

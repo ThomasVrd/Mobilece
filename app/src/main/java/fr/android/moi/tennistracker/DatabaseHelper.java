@@ -82,10 +82,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
      }
 
-     public Cursor getDataGame(int IDgame) {
+     public Cursor getDataGame(String IDgame) {
         Log.d("alors?", "oui");
          SQLiteDatabase db = this.getWritableDatabase();
-         Cursor res = db.rawQuery("select * from "+ TABLE_NAME + "where ID = "+ IDgame, null);
+         Cursor res = db.rawQuery("select * from "+ TABLE_NAME + " where ID = "+ IDgame, null);
          return res;
      }
 }
