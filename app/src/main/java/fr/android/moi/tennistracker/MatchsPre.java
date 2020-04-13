@@ -90,9 +90,6 @@ public class   MatchsPre extends AppCompatActivity {
 
         StringBuffer buffer = new StringBuffer();
         while (res.moveToNext()) {
-            buffer.append("ID :"+ res.getString(0)+"\n");
-            buffer.append("Joueur 1 :"+ res.getString(1)+"\n");
-            buffer.append("Joueur 2 :"+ res.getString(2)+"\n\n");
             Log.d("ID",  res.getString(0));
             Log.d("J1",  res.getString(1));
             Log.d("J2",  res.getString(2));
