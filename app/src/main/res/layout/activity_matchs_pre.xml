@@ -46,7 +46,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/LinLay">
 
             <TextView
                 android:id="@+id/match1"
@@ -54,7 +55,6 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 1"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -63,8 +63,8 @@
                 android:id="@+id/match2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 2"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -73,8 +73,8 @@
                 android:id="@+id/match3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 3"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -83,8 +83,8 @@
                 android:id="@+id/match4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 4"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -93,8 +93,8 @@
                 android:id="@+id/match5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 5"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -103,8 +103,8 @@
                 android:id="@+id/match6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 6"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -113,8 +113,8 @@
                 android:id="@+id/match7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 7"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -123,8 +123,8 @@
                 android:id="@+id/match8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 8"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -133,8 +133,8 @@
                 android:id="@+id/match9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 9"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -143,11 +143,12 @@
                 android:id="@+id/match10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="onClick5"
-                android:text="Match 10"
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -81,9 +82,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
      }
 
-     public Cursor getDataGame(String IDgame) {
+     public Cursor getDataGame(int IDgame) {
+        Log.d("alors?", "oui");
          SQLiteDatabase db = this.getWritableDatabase();
-         Cursor res = db.rawQuery("select ID from "+ TABLE_NAME + "where ID = "+ IDgame, null);
+         Cursor res = db.rawQuery("select * from "+ TABLE_NAME + "where ID = "+ IDgame, null);
          return res;
      }
 }
