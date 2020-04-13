@@ -18,7 +18,7 @@ public class Statistics extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
         Bundle b = getIntent().getExtras();
-        idMatch = b.getString("number");
+        idMatch = b.getString("id");
         Log.d("id:", String.valueOf(idMatch));
 
         //viewStats();
